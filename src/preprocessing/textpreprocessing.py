@@ -161,12 +161,6 @@ class TextPreprocessor:
     ----------
     config : PreprocessingConfig
         All preprocessing options.
-
-    Examples
-    --------
-    >>> proc = TextPreprocessor(PreprocessingConfig.for_tweets())
-    >>> proc.process("omg @starbucks this is LIT 🔥 http://t.co/abc")
-    'omg lit'
     """
 
     def __init__(self, config: PreprocessingConfig):
