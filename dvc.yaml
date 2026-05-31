@@ -1,0 +1,13 @@
+stages:
+  train:
+    cmd: python -m src.models.train
+    deps:
+      - src/
+      - src/params.yaml
+      - data/raw/Reviews.csv
+      - data/raw/training.1600000.processed.noemoticon.csv
+    outs:
+      - models/
+    metrics:
+      - metrics.json:
+          cache: false

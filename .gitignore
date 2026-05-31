@@ -1,0 +1,31 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+*.env
+
+#data 
+data/
+
+#dvc
+dvc-storage/
+.dvc/cache/
+
+# Model and vectorizer files
+models/
+word2vec/
+glove.6B/
+
+# MLflow artifacts
+mlruns/
+mlflow-artifacts/
+mlflow.db
+*.db
+
+
+# Virtual environments
+.venv
+
