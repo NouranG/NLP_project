@@ -1,0 +1,32 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python -m src.train.train
+    deps:
+    - path: data/raw/Reviews.csv
+      hash: md5
+      md5: c3c950ae0be8b0736477c89d052d33fd
+      size: 300904694
+    - path: data/raw/training.1600000.processed.noemoticon.csv
+      hash: md5
+      md5: df952449d6f9b5f9fdfe3fc53ddef7ca
+      size: 238803811
+    - path: src/
+      hash: md5
+      md5: d4625d8cb7fb45921f4f682ab8b64151.dir
+      size: 94568
+      nfiles: 27
+    - path: src/params.yaml
+      hash: md5
+      md5: d508f6dd97bae85045393ba397e26d96
+      size: 835
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: daf07f60fe5e223730b07a70287af8d1
+      size: 109
+    - path: models/
+      hash: md5
+      md5: bde9910daa2dcea9eee35b3106ab4a9a.dir
+      size: 108911320
+      nfiles: 1

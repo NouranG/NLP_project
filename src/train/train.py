@@ -176,7 +176,7 @@ artifacts = {
 }
 
 joblib.dump(
-    artifacts,models / "sentiment_pipeline.pkl"
+    artifacts,model_path
 )
 
 

@@ -9,10 +9,9 @@ wheels/
 
 #data 
 data/
-
 #dvc
-dvc-storage/
 .dvc/cache/
+dvc-storage/
 
 # Model and vectorizer files
 models/
@@ -29,3 +28,4 @@ mlflow.db
 # Virtual environments
 .venv
 
+/models
