@@ -62,6 +62,16 @@ else:
 
 #---------------------------------------------------------------------------------
 
+#train test split
+X_train, X_test, y_train, y_test = train_test_split(df[text_column], df['label'],
+                        test_size=params["model"]["test_size"]
+                            , random_state=params["model"]["random_state"])
+
+print(X_train.shape, X_test.shape)
+print(y_train.shape, y_test.shape)
+
+#---------------------------------------------------------------------------------
+
 # Preprocess text
 preprocessing_domain = params["preprocessing"]["domain"]
 
@@ -77,20 +87,14 @@ else:
     config = PreprocessingConfig()
 
 preprocessor = TextPreprocessor(config)
-df['clean_text'] = df[text_column].apply(preprocessor.process)
+X_train = X_train.apply(preprocessor.process)
+X_test = X_test.apply(preprocessor.process)
 
-print(df[["clean_text"]].head(5))
-print(df["clean_text"].isna().sum())
 
-#---------------------------------------------------------------------------------
+print(X_train.head(5))
+print(X_train.isna().sum())
 
-#train test split
-X_train, X_test, y_train, y_test = train_test_split(df['clean_text'], df['label'], 
-                            test_size=params["model"]["test_size"]
-                            , random_state=params["model"]["random_state"])
 
-print(X_train.shape, X_test.shape)
-print(y_train.shape, y_test.shape)
 
 #-----------------------------------------------------------------------------
 # Vectorization
